@@ -11,10 +11,10 @@ export class AuthComponent implements OnInit {
   constructor(public http: AuthService) { }
 
   ngOnInit() {
-    this.http.bdtest()
-      .subscribe(
-        arg => console.log(arg),
-        err => console.log(err));
+  //   this.http.bdtest()
+  //     .subscribe(
+  //       arg => console.log(arg),
+  //       err => console.log(err));
 
   }
 

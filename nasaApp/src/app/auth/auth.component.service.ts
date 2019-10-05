@@ -11,5 +11,9 @@ export class AuthService {
     bdtest(){
         return this.httpClient.get('http://localhost:3000/auth')
     }
+
+    isAuthenticated(){
+      return true
+    }
 }
 
