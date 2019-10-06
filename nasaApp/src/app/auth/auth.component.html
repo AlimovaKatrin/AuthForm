@@ -1,1 +1,5 @@
-<p>auth works!</p>
+<div class='login-form'>
+    <input placeholder='Your username' [formControl]='userName'><br>
+    <input type='password' placeholder='Enter password' [formControl]='password'><br>
+    <button (click)='login()'>Log In</button>
+</div>

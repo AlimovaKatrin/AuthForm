@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth.component';
 import { AuthService } from './auth.component.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -10,9 +11,10 @@ import { AuthService } from './auth.component.service';
     ],
     imports: [
         BrowserModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
-    providers: [ AuthService ],
-    exports: [ AuthComponent]
+    providers: [AuthService],
+    exports: [AuthComponent]
 })
 export class AuthModule { }

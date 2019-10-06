@@ -6,14 +6,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
+public isLogin = false;
+
     constructor(private httpClient: HttpClient) { }
 
-    bdtest(){
+    getUsers(){
         return this.httpClient.get('http://localhost:3000/auth')
     }
 
     isAuthenticated(){
-      return true
+      return this.isLogin
     }
 }
 

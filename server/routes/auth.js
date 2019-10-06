@@ -10,12 +10,18 @@ const db = new Firestore({
 
 router.get('/', (
     (req, res, next) => {
+        let responseFromFireBase = [];
         db.collection('users').get()
             .then((snapshot) => {
                 snapshot.forEach((doc) => {
-                    return res.json(doc.data());
+                    console.log(doc.data());
+                    responseFromFireBase.push(doc.data())
                 });
+                return res.json(responseFromFireBase);
             })
+            .catch((err) => {
+                console.log('Error getting documents', err);
+            });
     }));
 
 module.exports = router;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.component.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public http: AuthService) { }
 
   ngOnInit() {
+    console.log(this.http.isLogin)
+
   }
 
 }

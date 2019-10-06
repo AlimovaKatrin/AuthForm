@@ -5,19 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.component.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { MainPageComponent } from './main-page/main-page.component';
 import { AuthGuard } from './auth/guard-for-auth/auth.guard';
+import { MainPageModule } from './main-page/main-page.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
-    MainPageComponent
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    MainPageModule,
+    ReactiveFormsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

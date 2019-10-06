@@ -6,7 +6,6 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { AuthGuard } from './auth/guard-for-auth/auth.guard';
 import { AccesForAuthGuard } from './auth/guard-for-auth/acces-for-auth.guard';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -18,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    component: MainPageComponent
+    component: MainPageComponent, canActivate: [AuthGuard]
   }
 ];
 
