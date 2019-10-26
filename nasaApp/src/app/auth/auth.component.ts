@@ -15,17 +15,17 @@ export class AuthComponent implements OnInit {
 
   public currentUser: object;
 
-  constructor(public http: AuthService,public router:Router) { }
+  constructor(public http: AuthService, public router: Router) { }
 
   ngOnInit() {
-    
+
     //  this.http.isAuthenticated()
-    }
-  
+  }
+
   login() {
     this.http.getUsers().subscribe(
       (arg: []) => {
-        arg.forEach((element:any) => {
+        arg.forEach((element: any) => {
           if (element.name === this.userName.value && element.password === this.password.value) {
             this.http.switchAuth()
             this.router.navigate(['main']);
@@ -33,10 +33,7 @@ export class AuthComponent implements OnInit {
 
         })
       },
-      err => console.log(err));
+      err => console.log(err)).unsubscribe();
   }
-
-  // ngOnDestroy() {
-  //   this.http.getUsers.unsubscribe()
-  // }
+  
 }
