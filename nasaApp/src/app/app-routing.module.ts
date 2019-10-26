@@ -4,20 +4,21 @@ import { AuthComponent } from './auth/auth.component';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { AuthGuard } from './auth/guard-for-auth/auth.guard';
-import { AccesForAuthGuard } from './auth/guard-for-auth/acces-for-auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent, canActivate: [AuthGuard]
+    component: AppComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'auth',
-    component: AuthComponent, canActivate: [AccesForAuthGuard]
+    component: AuthComponent,
   },
   {
     path: 'main',
-    component: MainPageComponent, canActivate: [AuthGuard]
+    component: MainPageComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

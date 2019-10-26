@@ -8,6 +8,8 @@ const db = new Firestore({
     keyFilename: '/home/katrin/Grok/NasaAngular/server/nasa2019angular-firebase-adminsdk-j79gu-2a2d1f0b37.json',
 });
 
+let loginStatus = false;
+
 router.get('/', (
     (req, res, next) => {
         let responseFromFireBase = [];
@@ -24,4 +26,9 @@ router.get('/', (
             });
     }));
 
+router.get('/isAuth', (
+    (req, res, next) => {
+        res.send(loginStatus)
+    }))
+    
 module.exports = router;

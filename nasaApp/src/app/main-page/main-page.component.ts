@@ -11,8 +11,6 @@ export class MainPageComponent implements OnInit {
   constructor(public http: AuthService) { }
 
   ngOnInit() {
-    console.log(this.http.isLogin)
-
   }
 
 }

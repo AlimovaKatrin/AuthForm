@@ -18,21 +18,25 @@ export class AuthComponent implements OnInit {
   constructor(public http: AuthService,public router:Router) { }
 
   ngOnInit() {
-
-  }
-
+    
+    //  this.http.isAuthenticated()
+    }
+  
   login() {
     this.http.getUsers().subscribe(
       (arg: []) => {
         arg.forEach((element:any) => {
           if (element.name === this.userName.value && element.password === this.password.value) {
-            this.http.isLogin = true;
-            console.log(this.http.isLogin)
-            // this.router.navigate(['main']);
+            this.http.switchAuth()
+            this.router.navigate(['main']);
           }
 
         })
       },
       err => console.log(err));
   }
+
+  // ngOnDestroy() {
+  //   this.http.getUsers.unsubscribe()
+  // }
 }
