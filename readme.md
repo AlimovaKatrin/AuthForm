@@ -3,4 +3,4 @@ Testing App
 ===============
 **Angular+Express+FireBase**
 
-Auth without cookies, just request in db.
+Auth without cookies, request in db.
